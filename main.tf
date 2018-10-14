@@ -8,7 +8,7 @@ resource "linode_instance" "algo" {
     label           = "root"
     size            = 10240
     authorized_keys = "${var.ssh_keys}"
-    image           = "linode/ubuntu18.04"
+    image           = "${var.source_image_id}"
   }
 
   config {

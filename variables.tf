@@ -25,3 +25,9 @@ variable "algo_repo" {
   default     = "https://github.com/akerl/algo"
   description = "Repo to use for Algo code"
 }
+
+variable "source_image_id" {
+  type        = "string"
+  default     = "linode/ubuntu18.04"
+  description = "Source image to build on"
+}
