@@ -1,3 +1,11 @@
+data "template_file" "setup" {
+  template = "${file("${path.module}/assets/setup.sh")}"
+
+  vars {
+    algo_repo = "${var.algo_repo}"
+  }
+}
+
 resource "linode_instance" "algo" {
   label = "${var.name}-algo"
 
@@ -22,7 +30,12 @@ resource "linode_instance" "algo" {
     }
   }
 
+  provisioner "file" {
+    content     = "${data.template_file.setup.rendered}"
+    destination = "/root/setup.sh"
+  }
+
   provisioner "remote-exec" {
-    script = "${path.module}/assets/system_init.sh"
+    inline = ["bash /root/setup.sh"]
   }
 }
