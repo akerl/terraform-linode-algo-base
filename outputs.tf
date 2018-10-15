@@ -7,3 +7,7 @@ output "linode_id" {
   value       = "${linode_instance.algo.id}"
   description = "The ID of the Linode"
 }
+
+output "disk_id" {
+  value = "${linode_instance.algo.disks.0.id}"
+}
