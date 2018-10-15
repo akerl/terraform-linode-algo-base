@@ -4,6 +4,9 @@ set -euo pipefail
 
 export DEBIAN_FRONTEND=noninteractive
 
+rm /etc/ssh/ssh_host*
+ssh-keygen -A
+
 apt update
 apt upgrade -y
 apt install -y ansible python-pip build-essential python-dev python-virtualenv
