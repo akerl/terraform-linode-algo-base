@@ -15,7 +15,7 @@ resource "linode_instance" "algo" {
   disk {
     label           = "root"
     size            = 10240
-    authorized_keys = "${var.ssh_keys}"
+    authorized_keys = ["${var.ssh_keys}"]
     image           = "${var.source_image_id}"
   }
 
