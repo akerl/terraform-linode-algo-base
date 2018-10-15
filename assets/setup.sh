@@ -7,6 +7,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt update
 apt upgrade -y
 apt install -y ansible python-pip build-essential python-dev python-virtualenv
+apt autoremove
 
 ALGO_DIR=/opt/algo
 if [[ ! -e "$ALGO_DIR" ]] ; then
