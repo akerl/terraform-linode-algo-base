@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+resize2fs /dev/sda
+
 export DEBIAN_FRONTEND=noninteractive
 
 rm /etc/ssh/ssh_host*
