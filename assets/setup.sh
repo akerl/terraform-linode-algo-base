@@ -11,7 +11,7 @@ ssh-keygen -A
 
 apt update
 apt upgrade -y
-apt install -y ansible python-pip build-essential python-dev python-virtualenv
+apt install -y python-pip build-essential python-dev python-virtualenv
 apt autoremove -y
 
 ALGO_DIR=/opt/algo
