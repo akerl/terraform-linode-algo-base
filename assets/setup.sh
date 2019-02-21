@@ -32,5 +32,5 @@ fi
     [[ ! -e env ]] && python -m virtualenv env
     export PS1=""
     source env/bin/activate
-    pip install -r requirements.txt
+    pip install --force-reinstall -r requirements.txt
 )
