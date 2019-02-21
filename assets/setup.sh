@@ -14,6 +14,8 @@ apt upgrade -y
 apt autoremove -y
 apt install -y python-pip build-essential python-dev python-virtualenv
 
+systemctl restart sshd
+
 ALGO_DIR=/opt/algo
 if [[ ! -e "$ALGO_DIR" ]] ; then
     git clone "${algo_repo}" "$ALGO_DIR"
