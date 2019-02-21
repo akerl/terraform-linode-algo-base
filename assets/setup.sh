@@ -12,6 +12,7 @@ ssh-keygen -A
 apt update
 apt upgrade -y
 apt autoremove -y
+apt install -y python-pip build-essential python-dev python-virtualenv
 
 ALGO_DIR=/opt/algo
 if [[ ! -e "$ALGO_DIR" ]] ; then
@@ -27,5 +28,9 @@ fi
     fi
 
     git pull
-    pip3 install -r requirements.txt
+
+    [[ ! -e env ]] && python -m virtualenv env
+    export PS1=""
+    source env/bin/activate
+    pip install -r requirements.txt
 )
