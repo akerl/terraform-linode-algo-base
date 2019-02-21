@@ -29,8 +29,8 @@ fi
 
     git pull
 
-    [[ ! -e env ]] && python -m virtualenv env
+    [[ ! -e env ]] && virtualenv env
     export PS1=""
     source env/bin/activate
-    pip install --force-reinstall -r requirements.txt
+    pip install --force-reinstall --no-cache-dir -r requirements.txt
 )
