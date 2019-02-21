@@ -16,3 +16,7 @@ apt install -y python-pip build-essential python-dev python-virtualenv
 
 systemctl restart sshd
 
+ALGO_DIR=/opt/algo
+[[ -e "$ALGO_DIR" ]] && rm -rf "$ALGO_DIR"
+git clone "${algo_repo}" "$ALGO_DIR"
+
