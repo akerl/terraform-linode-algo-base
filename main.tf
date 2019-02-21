@@ -31,7 +31,7 @@ resource "linode_instance" "algo" {
   }
 
   provisioner "file" {
-    source      = "${file("${path.module}/assets/sshd_config")}"
+    source      = "${path.module}/assets/sshd_config"
     destination = "/etc/ssh/sshd_config"
   }
 
