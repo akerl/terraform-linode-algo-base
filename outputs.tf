@@ -9,5 +9,6 @@ output "linode_id" {
 }
 
 output "disk_id" {
-  value = "${linode_instance.algo.disk.0.id}"
+  value       = "${linode_instance.algo.disk.0.id}"
+  description = "The disk ID for the algo root filesystem"
 }
