@@ -12,7 +12,7 @@ ssh-keygen -A
 apt update
 apt upgrade -y
 apt autoremove -y
-apt install -y python-pip build-essential python-dev python-virtualenv tmux vim-minimal git diff-so-fancy
+apt install -y python-pip build-essential python-dev python-virtualenv git vim-nox
 
 systemctl restart sshd
 
